@@ -5,11 +5,11 @@ Ported from Go ``internal/domain/inventory/inventory.go``.
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from uuid import UUID, uuid4
 
 
-class MovementType(str, Enum):
+class MovementType(StrEnum):
     RECEIPT = "receipt"
     PRODUCTION_IN = "production_in"
     ISSUE = "issue"
@@ -21,7 +21,7 @@ class MovementType(str, Enum):
     RETURN_IN = "return_in"
 
 
-class LotStatus(str, Enum):
+class LotStatus(StrEnum):
     ACTIVE = "active"
     QUARANTINE = "quarantine"
     BLOCKED = "blocked"

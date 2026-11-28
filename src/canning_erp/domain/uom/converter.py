@@ -13,6 +13,7 @@ density and is forbidden: :class:`IncompatibleCategories` (invariant 2).
 
 import threading
 from decimal import ROUND_HALF_UP, Decimal
+from uuid import UUID
 
 from canning_erp.domain.uom.entities import Unit
 from canning_erp.domain.uom.errors import (
@@ -20,7 +21,6 @@ from canning_erp.domain.uom.errors import (
     NegativeQuantity,
     UnitNotFound,
 )
-from uuid import UUID
 
 #: Warehouse precision: NUMERIC(18,3). ALL conversion results are rounded
 #: to 3 decimals BEFORE writing to the DB, otherwise the DB would round
