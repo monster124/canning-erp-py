@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "ERP for canned-food production - Python rewrite of the Go canning-erp backend"
 readme = "README.md"
 requires-python = ">=3.13"
-ignore = ["N818"]
 license = { text = "MIT" }
 dependencies = [
     "fastapi>=0.115",
@@ -39,6 +38,9 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RUF"]
+# N818: domain exception names mirror the Go project's identifiers 1:1
+# (DocNotFound, FEFOInsufficientStock, ...) for port traceability.
+ignore = ["N818"]
 
 [tool.mypy]
 python_version = "3.13"
